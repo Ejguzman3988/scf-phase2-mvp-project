@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Form from "./components/Form"
+import Header from "./components/Header"
+import List from "./components/List"
+import { useEffect, useState } from "react"
 
-function App() {
+function App(){
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:4000/pokemons")
+      .then(r => r.json())
+      .then(data => setList(data))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path="/resources/new" render={() => <Form setList={setList} /> } />
+        <Route exact path="/">
+          <div>Home</div>
+        </Route>
+        <Route 
+          exact path="/resources" 
+          render={() => <List list={list} />} 
+        />
+      </Switch>
+    </Router>
   );
 }
 

@@ -1,0 +1,28 @@
+{
+  "pokemons": [
+    {
+      "id": 1,
+      "name": "bulbasaur",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
+      "pokeType": "grass"
+    },
+    {
+      "name": "asda",
+      "image": "asdasd",
+      "pokeType": "asdasd",
+      "id": 2
+    },
+    {
+      "name": "Eri",
+      "image": "https://m.media-amazon.com/images/I/617QhtvToPL._AC_SL1494_.jpg",
+      "pokeType": "asdasdasdas",
+      "id": 3
+    },
+    {
+      "name": "pidgeot",
+      "image": "https://m.media-amazon.com/images/I/617QhtvToPL._AC_SL1494_.jpg",
+      "pokeType": "asdasdasdas",
+      "id": 4
+    }
+  ]
+}
